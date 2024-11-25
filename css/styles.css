@@ -3,6 +3,7 @@
     --green-secondary: #8eb676;
     --green-thirty: #91b875;
     --light-black: #343a40;
+    --white: #f0f0f0;
 
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
@@ -27,8 +28,20 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.navbar{
-    position: relative;
+body{
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+a, span, h1, p{
+    text-decoration: none;
+    color: var(--light-black);
+}
+
+/* --------------------------------------------------NAVBAR--------------------------------------------- */
+
+.navbar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -41,6 +54,13 @@ html {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0.5rem 1rem;
+
+    background: transparent !important;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 3;
 }
 
 .container-fluid {
@@ -61,4 +81,165 @@ html {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-  }
+}
+
+.nav-logo {
+    height: 46px;
+    width: 179.77px;
+    filter: invert(100%);
+    transition: filter 0.3s ease;
+}
+
+.nav-logo:hover{
+    filter: invert(0%);
+    transition: filter 0.3s ease;
+}
+
+.navbar-toggler {
+    display: none; /* Esconde o botão por padrão */
+    background-color: transparent;
+    color: var(--light-black);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu-toggle{
+    display: none;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    
+}
+
+.navbar-nav li {
+    padding: 14.4px 20px;
+    list-style: none;
+}
+
+.nav-link-start{
+    color: var(--green-primary);
+}
+
+/* ------------------------------------ SECTION 1 ------------------------------------ */
+
+.init-sec{
+    padding: 0;
+    margin-top: -20px;
+    height: 100dvh;
+    background: url("../images/Rosangela-wide2.webp") no-repeat;
+    background-size: 100dvw;
+    background-position: 50% 0;
+    display: grid;     
+    grid-template-columns: 40% 40%;       
+    justify-content: flex-start;  /* Alinha os itens à esquerda */
+    align-items: end;          /* Centraliza os itens verticalmente */
+    justify-content: center;
+}
+
+.container-init-sec{
+    max-width: 600px;             /* Define uma largura máxima para o container */
+    width: 100%; 
+    margin: 5px;
+}
+
+.container-init-sec h1{
+    font-size: 60px;
+    margin: 0;
+}
+
+.container-init-sec p{
+    font-size: 18px;
+    margin-top: 28px;
+}
+
+.container-init-row{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-init-row a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-wrap: nowrap;
+    margin-bottom: 10px;
+}
+
+.btn-primary{
+    padding: 16px 24px;
+    border: 1px solid var(--green-primary);
+    border-radius: 3px;
+    background-color: var(--green-primary);
+    font-size: 14px;
+    text-wrap: nowrap;
+}
+
+.btn-circ{
+    height: 50px;
+    width: 50px;
+    background: var(--green-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-init-row a:hover {
+    color: var(--white);
+    transition: filter 0.3s ease;
+} 
+.container-init-row a:hover .btn-circ svg{
+    filter: invert(100%);
+    transition: filter 0.3s ease;
+}
+
+/* ----------------- Media Telefone --------------- */
+
+@media (max-width: 768px) {
+
+    /* ------------- NAVBAR ------------------ */
+
+    .navbar-toggler {
+        display: block; /* Mostra o botão em telas menores */
+    }
+
+    .collapse{
+        display: none;
+        margin-top: 10px;
+    }
+
+    .menu-toggle {
+        display: none; /* Esconde o checkbox */
+    }
+
+    .menu-toggle:checked ~ .collapse {
+        display: block;
+        position: absolute;
+        top: 44px;
+    }
+
+    .navbar-nav{
+        flex-direction: column;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .navbar-nav li{
+        padding-block: 10px ;
+    }
+
+    /* ------------------ SECTION 1 ------------------ */
+    .init-sec{
+        background-size: 300dvw;
+    }
+}
