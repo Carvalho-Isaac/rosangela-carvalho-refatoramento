@@ -10,8 +10,6 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -19,24 +17,39 @@
 *::after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    font-family: sans-serif;
+    font-family: "Nunito Sans", "Segoe UI", Roboto, -apple-system, Arial, sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow-x: hidden;
 }
 
-body{
+body {
+    height: 100%;
     font-size: 16px;
     padding: 0;
     margin: 0;
 }
 
-a, span, h1, p{
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+a,
+span,
+h1,
+p {
     text-decoration: none;
     color: var(--light-black);
+    line-height: 1.1;
+    font-weight: 400;
 }
 
 /* --------------------------------------------------NAVBAR--------------------------------------------- */
@@ -55,12 +68,13 @@ a, span, h1, p{
     justify-content: space-between;
     padding: 0.5rem 1rem;
 
-    background: transparent !important;
+    background-color: transparent;
     position: absolute;
     top: 20px;
     left: 0;
     right: 0;
     z-index: 3;
+
 }
 
 .container-fluid {
@@ -90,13 +104,14 @@ a, span, h1, p{
     transition: filter 0.3s ease;
 }
 
-.nav-logo:hover{
+.nav-logo:hover {
     filter: invert(0%);
     transition: filter 0.3s ease;
 }
 
 .navbar-toggler {
-    display: none; /* Esconde o botão por padrão */
+    display: none;
+    /* Esconde o botão por padrão */
     background-color: transparent;
     color: var(--light-black);
     border: none;
@@ -105,17 +120,16 @@ a, span, h1, p{
     font-size: 16px;
 }
 
-.menu-toggle{
+.menu-toggle {
     display: none;
 }
 
-.navbar-nav{
+.navbar-nav {
     display: flex;
     flex-direction: row;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 0;
     margin-bottom: 1rem;
-    
 }
 
 .navbar-nav li {
@@ -123,59 +137,72 @@ a, span, h1, p{
     list-style: none;
 }
 
-.nav-link-start{
+.nav-link {
+    font-weight: 600;
+    opacity: 1 !important;
+    line-height: 1.8;
+}
+
+.nav-link:hover {
+    color: var(--green-secondary)
+}
+
+.nav-link-start {
     color: var(--green-primary);
 }
 
 /* ------------------------------------ SECTION 1 ------------------------------------ */
 
-.init-sec{
+.init-sec {
     padding: 0;
     margin-top: -20px;
-    height: 100dvh;
+    height: 80vh;
     background: url("../images/Rosangela-wide2.webp") no-repeat;
-    background-size: 100dvw;
+    background-size: 110vw;
     background-position: 50% 0;
-    display: grid;     
-    grid-template-columns: 40% 40%;       
-    justify-content: flex-start;  /* Alinha os itens à esquerda */
-    align-items: end;          /* Centraliza os itens verticalmente */
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: flex-start;
+    /* Alinha os itens à esquerda */
+    align-items: end;
+    /* Centraliza os itens verticalmente */
     justify-content: center;
 }
 
-.container-init-sec{
-    max-width: 600px;             /* Define uma largura máxima para o container */
-    width: 100%; 
-    margin: 5px;
+.container-init-sec {
+    max-width: 600px;
+    width: 100%;
 }
 
-.container-init-sec h1{
+.container-init-sec h1 {
     font-size: 60px;
     margin: 0;
+    text-wrap: nowrap;
 }
 
-.container-init-sec p{
+.container-init-sec p {
     font-size: 18px;
     margin-top: 28px;
+    text-wrap: nowrap;
 }
 
-.container-init-row{
+.container-init-row {
     display: flex;
     margin-top: 20px;
     align-items: center;
-    gap: 10px;
+    gap: 7px;
 }
 
-.container-init-row a{
+.container-init-row a {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 7px;
     text-wrap: nowrap;
     margin-bottom: 10px;
 }
 
-.btn-primary{
-    padding: 16px 24px;
+.btn-primary {
+    padding: 15px 23px;
     border: 1px solid var(--green-primary);
     border-radius: 3px;
     background-color: var(--green-primary);
@@ -183,7 +210,7 @@ a, span, h1, p{
     text-wrap: nowrap;
 }
 
-.btn-circ{
+.btn-circ {
     height: 50px;
     width: 50px;
     background: var(--green-primary);
@@ -194,13 +221,124 @@ a, span, h1, p{
     justify-content: center;
 }
 
-.container-init-row a:hover {
+.btn-a-primary:hover {
     color: var(--white);
     transition: filter 0.3s ease;
-} 
-.container-init-row a:hover .btn-circ svg{
+}
+
+.container-init-row a:hover .btn-circ svg {
     filter: invert(100%);
     transition: filter 0.3s ease;
+}
+
+.container-media-services{
+    display: flex;
+    justify-content: space-evenly;
+    padding-inline: 20px;
+}
+
+.media-services{
+    justify-items: center;
+    width: 25%;
+    padding: 30px 10px;
+
+}
+
+.media-services-bckg-second{
+    background-color: var(--green-secondary);
+}
+
+.media-services-bkg-third{
+    background-color: var(--green-thirty);
+}
+
+.media-services-svg-arch{
+    background: url("../images/arch-proj.svg") no-repeat;
+    background-size: 60px;
+    height: 60px;
+    width: 60px;
+}
+
+.media-services-svg-urb{
+    background: url("../images/urb-proj.svg") no-repeat;
+    background-size: 60px;
+    height: 60px;
+    width: 60px;
+}
+
+.media-services-svg-inte{
+    background: url("../images/interior.svg") no-repeat;
+    background-size: 60px;
+    height: 60px;
+    width: 60px;
+}
+
+.media-services-svg-deal{
+    background: url("../images/deal.svg") no-repeat;
+    background-size: 60px;
+    height: 60px;
+    width: 60px;
+}
+
+/* --------------------------------------- SECTION 2 --------------------------------------------- */
+
+.secondary-section {
+    background-color: var(--green-primary);
+    padding-block: 40px;
+    color: var(--light-black);
+}
+
+.container-count {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-count strong {
+    font-size: 50px;
+    font-weight: 400;
+    width: 115px;
+    text-align: center;
+}
+
+.container-count span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    max-width: 116px;
+}
+
+.count-xp,
+.count-proj,
+.count-part {
+    display: flex;
+    flex-grow: 1;
+    gap: 10px;
+    padding: 16px;
+    align-items: center;
+    letter-spacing: 1px;
+    max-width: 300px;
+}
+
+.count-xp,
+.count-proj {
+    border-right: 1px solid #666;
+}
+
+.number-count {
+    animation: count 2s steps(30, end) forwards;
+}
+
+.number-count::before {
+    content: counter(count);
+}
+
+.number-count-proj {
+    animation: count-large 2s steps(35, end) forwards;
+}
+
+.number-count-proj::before {
+    content: counter(count);
 }
 
 /* ----------------- Media Telefone --------------- */
@@ -210,36 +348,331 @@ a, span, h1, p{
     /* ------------- NAVBAR ------------------ */
 
     .navbar-toggler {
-        display: block; /* Mostra o botão em telas menores */
+        display: block;
+        /* Mostra o botão em telas menores */
     }
 
-    .collapse{
+    .collapse {
         display: none;
         margin-top: 10px;
+        transition: filter 0.3s ease;
     }
 
     .menu-toggle {
-        display: none; /* Esconde o checkbox */
+        display: none;
+        /* Esconde o checkbox */
     }
 
-    .menu-toggle:checked ~ .collapse {
+    .menu-toggle:checked~.collapse {
         display: block;
         position: absolute;
         top: 44px;
+        transition: filter 0.3s ease;
     }
 
-    .navbar-nav{
+    .navbar-nav {
         flex-direction: column;
         padding: 0;
         margin-top: 10px;
     }
 
-    .navbar-nav li{
-        padding-block: 10px ;
+    .navbar-nav li {
+        padding-block: 10px;
     }
 
     /* ------------------ SECTION 1 ------------------ */
-    .init-sec{
-        background-size: 300dvw;
+    .init-sec {
+        background-size: 1440px;
+        grid-template-columns: 100%;
+        padding-left: 7px;
+    }
+
+
+
+
+    /* ------------------ SECTION 2 --------------------- */
+
+    .container-count {
+        flex-direction: column;
+    }
+
+    .count-xp,
+    .count-proj {
+        border-right: none;
+    }
+}
+
+
+/* ----------------- KEYFRAMES ---------------- */
+
+@keyframes count {
+    0% {
+        counter-increment: count 0;
+    }
+
+    3.33% {
+        counter-increment: count 1;
+    }
+
+    6.67% {
+        counter-increment: count 2;
+    }
+
+    10% {
+        counter-increment: count 3;
+    }
+
+    13.33% {
+        counter-increment: count 4;
+    }
+
+    16.67% {
+        counter-increment: count 5;
+    }
+
+    20% {
+        counter-increment: count 6;
+    }
+
+    23.33% {
+        counter-increment: count 7;
+    }
+
+    26.67% {
+        counter-increment: count 8;
+    }
+
+    30% {
+        counter-increment: count 9;
+    }
+
+    33.33% {
+        counter-increment: count 10;
+    }
+
+    36.67% {
+        counter-increment: count 11;
+    }
+
+    40% {
+        counter-increment: count 12;
+    }
+
+    43.33% {
+        counter-increment: count 13;
+    }
+
+    46.67% {
+        counter-increment: count 14;
+    }
+
+    50% {
+        counter-increment: count 15;
+    }
+
+    53.33% {
+        counter-increment: count 16;
+    }
+
+    56.67% {
+        counter-increment: count 17;
+    }
+
+    60% {
+        counter-increment: count 18;
+    }
+
+    63.33% {
+        counter-increment: count 19;
+    }
+
+    66.67% {
+        counter-increment: count 20;
+    }
+
+    70% {
+        counter-increment: count 21;
+    }
+
+    73.33% {
+        counter-increment: count 22;
+    }
+
+    76.67% {
+        counter-increment: count 23;
+    }
+
+    80% {
+        counter-increment: count 24;
+    }
+
+    83.33% {
+        counter-increment: count 25;
+    }
+
+    86.67% {
+        counter-increment: count 26;
+    }
+
+    90% {
+        counter-increment: count 27;
+    }
+
+    93.33% {
+        counter-increment: count 28;
+    }
+
+    96.67% {
+        counter-increment: count 29;
+    }
+
+    100% {
+        counter-increment: count 30;
+    }
+}
+
+@keyframes count-large {
+    0% {
+        counter-increment: count 0;
+    }
+
+    2.86% {
+        counter-increment: count 17;
+    }
+
+    5.71% {
+        counter-increment: count 34;
+    }
+
+    8.57% {
+        counter-increment: count 51;
+    }
+
+    11.43% {
+        counter-increment: count 68;
+    }
+
+    14.29% {
+        counter-increment: count 85;
+    }
+
+    17.14% {
+        counter-increment: count 102;
+    }
+
+    20% {
+        counter-increment: count 119;
+    }
+
+    22.86% {
+        counter-increment: count 136;
+    }
+
+    25.71% {
+        counter-increment: count 153;
+    }
+
+    28.57% {
+        counter-increment: count 170;
+    }
+
+    31.43% {
+        counter-increment: count 187;
+    }
+
+    34.29% {
+        counter-increment: count 204;
+    }
+
+    37.14% {
+        counter-increment: count 221;
+    }
+
+    40% {
+        counter-increment: count 238;
+    }
+
+    42.86% {
+        counter-increment: count 255;
+    }
+
+    45.71% {
+        counter-increment: count 272;
+    }
+
+    48.57% {
+        counter-increment: count 289;
+    }
+
+    51.43% {
+        counter-increment: count 306;
+    }
+
+    54.29% {
+        counter-increment: count 323;
+    }
+
+    57.14% {
+        counter-increment: count 340;
+    }
+
+    60% {
+        counter-increment: count 357;
+    }
+
+    62.86% {
+        counter-increment: count 374;
+    }
+
+    65.71% {
+        counter-increment: count 391;
+    }
+
+    68.57% {
+        counter-increment: count 408;
+    }
+
+    71.43% {
+        counter-increment: count 425;
+    }
+
+    74.29% {
+        counter-increment: count 442;
+    }
+
+    77.14% {
+        counter-increment: count 459;
+    }
+
+    80% {
+        counter-increment: count 476;
+    }
+
+    82.86% {
+        counter-increment: count 493;
+    }
+
+    85.71% {
+        counter-increment: count 510;
+    }
+
+    88.57% {
+        counter-increment: count 527;
+    }
+
+    91.43% {
+        counter-increment: count 544;
+    }
+
+    94.29% {
+        counter-increment: count 561;
+    }
+
+    97.14% {
+        counter-increment: count 578;
+    }
+
+    100% {
+        counter-increment: count 600;
     }
 }
