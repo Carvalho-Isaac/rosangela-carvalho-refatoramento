@@ -70,7 +70,7 @@ p {
 
     background-color: transparent;
     position: absolute;
-    top: 20px;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 3;
@@ -128,8 +128,9 @@ p {
     display: flex;
     flex-direction: row;
     font-size: 15px;
-    margin-top: 0;
+    margin-top: 1rem;
     margin-bottom: 1rem;
+    background-color: inherit;
 }
 
 .navbar-nav li {
@@ -370,10 +371,13 @@ p {
         transition: filter 0.3s ease;
     }
 
-    .navbar-nav {
+    .navbar .navbar-nav {
         flex-direction: column;
         padding: 0;
         margin-top: 10px;
+        background-color: #f0f0f0;
+        width: 100vw;
+        margin-left: -31px;
     }
 
     .navbar-nav li {
